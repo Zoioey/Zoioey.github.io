@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="zh_CN">
+<head>
+    <!-- 设置文档的字符编码为UTF-8 -->
+    <meta charset="UTF-8">
+    <!-- 设置视口属性，使页面在不同设备上具有响应式布局 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- 设置页面的标题 -->
+    <title>Contact</title>
+    <!-- 链接外部CSS文件，用于定义页面的样式 -->
+    <link rel="icon" href="img/R-C.jpg" type="image/x-icon">
+    <link rel="stylesheet" href="styles_blog.css">
+</head>
+<body>
+    <!-- 页面的头部区域，包含页面的主标题 -->
+    <header>
+        <h1>Contact Me</h1>
+    </header>
+    <!-- 导航栏，包含网站的主菜单 -->
+    <nav>
+        <ul>
+            <!-- 导航项：主页 -->
+            <li><a href="blog.html">Home</a></li>
+            <!-- 下拉菜单项 -->
+            <li class="dropdown">
+                <!-- 下拉菜单的触发按钮 -->
+                <a href="#" class="dropbtn">Menu</a>
+                <!-- 下拉菜单的内容 -->
+                <div class="dropdown-content">
+                    <a href="about.html">Code</a>
+                    <!-- 影视剧分享页面的链接 -->
+                    <a href="movies.html">Movies</a>
+                    <!-- 街舞页面的链接 -->
+                    <a href="dance.html">Hiphop</a>
+                    <!-- 联系页面的链接 -->
+                    <a href="contact.html">Contact</a>
+                </div>
+            </li>
+        </ul>
+    </nav>
+    <!-- 页面的主体内容 -->
+    <main>
+    <!-- 联系我部分，使用flex布局使内容垂直和水平居中 -->
+    <section style="display: flex; align-items: center; justify-content: center;">
+        <div>
+            <h2>Contact Me</h2>
+            <!-- 以下为联系信息的具体内容 -->
+            <p>学院：计算机学院</p>
+            <p>班级：23级软件工程3班</p>
+            <p>学号：202305566448</p>
+            <p>姓名：黎荣仪</p>
+            <!-- 包含一个指向个人简历页面的链接 -->
+            <p>
+                这里是我的
+                <a href="resume.html" class="resume"><em>个人简历</em></a>。
+            </p>
+        </div>
+        <!-- 一张联系人的图片 -->
+        <img src="img/c.jpg" alt="contact Image"  width="250px" style="margin-left: 20px;">
+    </section>
+</main>
+    <!-- 页面的底部区域，包含版权信息 -->
+    <footer>
+        <p>&copy; 2025 My Blog</p>
+    </footer>
+</body>
+</html>

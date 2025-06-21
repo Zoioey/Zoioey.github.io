@@ -1,0 +1,900 @@
+<!DOCTYPE html>
+<html lang="zh_CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Code 学习记录</title>
+  <link rel="icon" href="img/code.jpg" type="image/x-icon">
+  <link rel="stylesheet" href="about.css">
+  <style>
+.container {
+  max-width: 1000px;           /* 设置最大宽度 */
+  margin: 0 auto;              /* 居中显示 */
+  padding: 20px;              /* 内边距 */
+  background-color: #fff;      /* 白色背景，增强可读性 */
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05); /* 轻微阴影，提升质感 */
+  border-radius: 10px;         /* 圆角设计 */
+  line-height: 1.6;            /* 行高，改善文字排版 */
+}
+
+/* 导航栏下方留出间距 */
+main {
+  margin-top: 20px;
+}
+
+/* 标题样式优化 */
+h1, h2, h3 {
+  color: #2c3e50;
+  font-weight: bold;
+  margin-top: 30px;
+  margin-bottom: 15px;
+}
+
+/* 段落样式 */
+p {
+  color: #333;
+  font-size: 1rem;
+  margin-bottom: 15px;
+}
+
+/* 代码块样式 */
+pre.md-fences code {
+  background-color: #f4f4f4 !important;
+  padding: 15px;
+  border-radius: 6px;
+  overflow-x: auto;
+  font-size: 0.95rem;
+}
+
+/* 返回按钮样式 */
+button.copy-button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+  float: right;
+  margin: 10px 0;
+}
+button.copy-button:hover {
+  background-color: #0056b3;
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+  .container {
+    padding: 15px;
+    margin: 10px;
+  }
+
+  button.copy-button {
+    float: none;
+    display: block;
+    margin: 10px auto;
+  }
+}
+
+ .md-fences {
+    --selection-color: #2f845e;
+    --selection-text: #fff;
+}
+.md-fences {
+    font-family: Fira Code, Consolas, Lucida Console, Courier, monospace, Helvetica Neue, Helvetica, Arial, sans-serif;
+    color: #2f4f4f;
+    background-color: #e8eee4;
+    padding: 17px;
+    padding-top: 32px;
+    border-radius: 10px;
+    -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, .15);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, .15);
+    -webkit-transition: -webkit-transform .3s ease, -webkit-box-shadow .3s ease;
+    transition: -webkit-transform .3s ease, -webkit-box-shadow .3s ease;
+    transition: transform .3s ease, box-shadow .3s ease;
+    transition: transform .3s ease, box-shadow .3s ease, -webkit-transform .3s ease, -webkit-box-shadow .3s ease;
+    position: relative;
+}
+*, :after, :before {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+*, :after, :before {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+*, :after, :before {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+*, :after, :before {
+    -webkit-box-sizing: inherit;
+    box-sizing: inherit;
+}
+@media (max-width: 768px) {
+    .copy-button {
+        font-size: 12px;
+        padding: 4px 8px;
+        top: 8px;
+        right: 10px;
+    }
+}
+/* 绝对定位按钮：定位在代码块右上角、 高亮背景色，清晰可见、过渡动画平滑。*/
+.copy-button {
+    position: absolute;
+    top: 12px;
+    right: 15px;
+    z-index: 10;
+    padding: 6px 12px;
+    font-family: Fira Code, Consolas, monospace;
+    font-size: 13px;
+    font-weight: 500;
+    background: rgba(47, 132, 94, .9);
+    color: #fff;
+    border: 1px solid hsla(0, 0%, 100%, .15);
+    border-radius: 4px;
+    cursor: pointer;
+    -webkit-transition: all .25s cubic-bezier(.4,0,.2,1);
+    transition: all .25s cubic-bezier(.4,0,.2,1);
+    outline: none;
+    -webkit-box-shadow: 0 2px 6px rgba(0, 0, 0, .1);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, .1);
+    letter-spacing: .5px;
+    text-transform: uppercase;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+[type=button], [type=reset], [type=submit], button {
+    -webkit-appearance: button;
+}
+button, select {
+    text-transform: none;
+}
+button, input, optgroup, select, textarea {
+    margin: 0;
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
+}
+button {
+    border-radius: 0;
+}
+[type=button], [type=reset], [type=submit], button {
+    -webkit-appearance: button;
+}
+button, select {
+    text-transform: none;
+}
+button, input, optgroup, select, textarea {
+    margin: 0;
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
+}
+button {
+    border-radius: 0;
+}
+[type=button], [type=reset], [type=submit], button {
+    -webkit-appearance: button;
+}
+button, select {
+    text-transform: none;
+}
+button, input, optgroup, select, textarea {
+    margin: 0;
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
+}
+button {
+    border-radius: 0;
+}
+*, :after, :before {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+*, :after, :before {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+*, :after, :before {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+*, :after, :before {
+    -webkit-box-sizing: inherit;
+    box-sizing: inherit;
+}
+button {
+    appearance: auto;
+    text-rendering: auto;
+    color: buttontext;
+    letter-spacing: normal;
+    word-spacing: normal;
+    line-height: normal;
+    text-transform: none;
+    text-indent: 0px;
+    text-shadow: none;
+    display: inline-block;
+    text-align: center;
+    cursor: default;
+    box-sizing: border-box;
+    background-color: buttonface;
+    margin: 0em;
+    padding-block: 1px;
+    padding-inline: 6px;
+    border-width: 2px;
+    border-style: outset;
+    border-color: buttonborder;
+    border-image: initial;
+}
+
+    </style>
+</head>
+<body>
+    <!-- 页面头部 -->
+    <header>
+        <h1 style="color: #ffffff;">My Code Learning Record</h1>
+    </header>
+    
+    <!-- 导航栏 -->
+    <nav>
+        <ul>
+        <li><a href="blog.html">Home</a></li>
+        <li class="dropdown">
+            <a href="#" class="dropbtn">Menu</a>
+            <div class="dropdown-content">
+            <a href="about.html">Code</a>
+            <a href="movies.html">Movies</a>
+            <a href="dance.html">Hiphop</a>
+            <a href="contact.html">Contact</a>
+            </div>
+        </li>
+        </ul>
+    </nav>
+
+<main>
+<div data-v-04da1a42="" class="container"><a data-v-04da1a42="" href="/blog" class="router-link-active"><div data-v-04da1a42="" class="logo d-flex align-items-center me-auto me-xl-0"><h1 data-v-04da1a42="">Append</h1></div></a><div data-v-04da1a42="" class="content"><div data-v-04da1a42="" data-wow-delay=".3s" class="header mx-auto pb-5 wow fadeIn" style="visibility: visible; animation-delay: 0.3s;"></div><div data-v-04da1a42="" class="markdown-content"><div data-v-04da1a42="" id="myElement" class="page-api"><div data-v-04da1a42="" id="content" class="api-content markdown-body"><h1 id="header-0">微服务</h1>
+<h2 id="header-1">微服务与Spring Cloud</h2>
+<h3 id="header-2">架构：</h3>
+<ul>
+<li>
+<p>单体架构：一个典型的单体应用就是将所有业务场景的表示层、业务逻辑层和数据访问层放在一个工程中</p>
+</li>
+<li>
+<p>SOA架构：将应用程序的不同功能单元（称为服务）进行拆分，并通过在这些服务之间定义良好的接口和契约联系起来。</p>
+<p>​				SOA架构将原来的单体架构按照功能细分为不同的子系统</p>
+<p>​				缺点：SOA一般使用某种<strong>集中式管理</strong>，</p>
+</li>
+<li>
+<p>微服务架构：每种应用程序都在其自己的进程中运行，并与<strong>轻量级机制</strong>（通常是HTTP资源的API）进行通信。</p>
+<p>​				<strong>直接通过HTTP协议进行通信的，也可以采用消息队列来通信</strong></p>
+</li>
+</ul>
+<h3 id="header-4">微服务架构的功能：</h3>
+<p>1.<strong>微服务的自动化部署</strong></p>
+<p>2.<strong>服务集中化管理</strong></p>
+<p>3.<strong>支持熔断机制</strong></p>
+<h3 id="header-8">Spring Cloud：</h3>
+<p>Spring Cloud是一个<strong>基于Spring Boot</strong>实现的微服务开发架构</p>
+<p>特点：</p>
+<ol>
+<li><strong>组件丰富，功能齐全</strong>
+<ol>
+<li>Spring Cloud Eureka注册发现中心，主要负责完成微服务架构中的服务治理功能；</li>
+<li>Spring Cloud Config分布式配置中心，可以实现动态修改配置文件；</li>
+<li>Spring Cloud Hystrix熔断器，通过熔断机制控制服务和第三方库的节点，从而对延迟和故障提供更强大的容错能力</li>
+</ol>
+</li>
+<li><strong>开箱即用，快速启动</strong>
+<ol>
+<li>Spring Cloud继承了Spring Boot快速构建和自动化配置的优点，有开箱即用，快速启动的特点</li>
+</ol>
+</li>
+<li><strong>模块部署方便，项目维护难度降低</strong>
+<ol>
+<li>Spring Cloud采用模块化开发</li>
+</ol>
+</li>
+<li><strong>项目扩展性和稳定性较好</strong></li>
+<li><strong>具有容错处理机制</strong>
+<ol>
+<li>Spring Cloud中提供了Hystrix组件，该组件专门用于处理容错</li>
+</ol>
+</li>
+</ol>
+<p>​		Greenwich是目前最新的稳定版本</p>
+<p>​		选择Spring Cloud版本与各个组件版本时要以<strong>兼容</strong>为第一要务</p>
+<h2 id="header-17">服务的注册与发现：</h2>
+<h3 id="header-18"><strong>Eureka工作机制</strong>：</h3>
+<ul>
+<li>Eureka Server：服务注册中心
+<ul>
+<li>移除周期：默认90秒</li>
+</ul>
+</li>
+<li>Eureka Client：服务（服务实例）
+<ul>
+<li>存在两种角色，分别是服务提供者和服务消费者</li>
+<li>心跳周期：默认30秒发送一次心跳</li>
+</ul>
+</li>
+</ul>
+<pre><div class="md-fences"><div class="line-numbers"><span class="line-number">1</span><span class="line-number">2</span><span class="line-number">3</span><span class="line-number">4</span><span class="line-number">5</span><span class="line-number">6</span><span class="line-number">7</span><span class="line-number">8</span><span class="line-number">9</span><span class="line-number">10</span><span class="line-number">11</span><span class="line-number">12</span><span class="line-number">13</span><span class="line-number">14</span></div><code class="language-java hljs mark">server:
+  port: <span class="hljs-number"><span class="hljs-number">7000</span></span>                          # 服务器端口号<span class="hljs-number"><span class="hljs-number">7000</span></span>   
+spring:
+  application:              		#端口号名称配置
+    name: eureka-server                       
+eureka:
+  client:
+    fetch-registry: <span class="hljs-keyword"><span class="hljs-keyword">false</span></span>         # 表示是否向Eureka Server注册
+    register-with-eureka: <span class="hljs-keyword"><span class="hljs-keyword">false</span></span>     # 表示是否从Eureka Server获取注册信息
+    service-url:
+defaultZone:http:<span class="hljs-comment"><span class="hljs-comment">//${eureka.instance.hostname}:${server.port}/eureka/   #设置服务注册中心地址</span></span>
+  instance:
+    hostname: localhost
+
+</code><button class="copy-button">复制代码</button></div></pre>
+<ul>
+<li>在项目启动类EurekaServerApplication上添加**@EnableEurekaServer**注解开启Eureka Server功能。</li>
+<li>在项目启动类EurekaProviderApplication上添加**@EnableEurekaClient**注解开启Eureka Client功能。</li>
+</ul>
+<h3 id="header-22"><strong>Eureka的常用配置</strong>：</h3>
+<p>Eureka是通过心跳的方式实现对各个服务实例的健康检测的</p>
+<pre><div class="md-fences"><div class="line-numbers"><span class="line-number">1</span><span class="line-number">2</span><span class="line-number">3</span><span class="line-number">4</span><span class="line-number">5</span></div><code class="language-java hljs mark">eureka:
+  instance:
+     leaseRenewalIntervalInSeconds: <span class="hljs-number">5</span>   #设置心跳时间为<span class="hljs-number">5</span>秒
+     leaseExpirationDurationInSeconds: <span class="hljs-number">10</span>    #设置每隔<span class="hljs-number">10</span>秒刷新服务列表，将无效服务剔除 	
+
+</code><button class="copy-button">复制代码</button></div></pre>
+<p><strong>自我保护机制</strong>：Eureka的自我保护机制是为了防止误杀服务。如果Eureka Server注册中心发生故障，那么Eureka Client服务就有可能不能正常续约，虽然这时Eureka Client服务是正常的，但注册中心依然会将超过90秒未续约的服务剔除，造成误杀服务的情况。默认情况下，Eureka Server配置的自我保护阀值是0.85。</p>
+<pre><div class="md-fences"><div class="line-numbers"><span class="line-number">1</span><span class="line-number">2</span><span class="line-number">3</span></div><code class="hljs yaml mark"><span class="hljs-string">eureka：</span>
+  <span class="hljs-string">server：</span>
+    <span class="hljs-attr">enable-self-preservation:</span> <span class="hljs-literal">false</span>  <span class="hljs-comment">#关闭自我保护机制</span>
+</code><button class="copy-button">复制代码</button></div></pre>
+<h2 id="header-27">客户端负载均衡Ribbon：</h2>
+<h3 id="header-28"><strong>负载均衡：</strong></h3>
+<ul>
+<li>硬件负载均衡：直接在服务器和外部网络间安装负载均衡设备，通常这种设备称为<strong>负载均衡器</strong></li>
+<li>软件负载均衡：指在一台或多台服务器相应的操作系统上安装一个或多个附加软件来实现负载均衡</li>
+</ul>
+<p>​	<strong>负载均衡器会维护一个可用的服务清单，通过心跳检测来剔除清单中故障的服务端节点</strong></p>
+<h3 id="header-31"><strong>Ribbon</strong>：</h3>
+<p>提供了很多负载均衡的算法，例如轮询，随机等</p>
+<p>一种是与<strong>RestTemplate</strong>相结合，另一种是与<strong>Feign</strong>相结合</p>
+<h3 id="header-34"><strong>Ribbon整合Eureka</strong>：</h3>
+<p>当Ribbon和Eureka配合使用时，Ribbon可从Eureka Server中获取服务提供者地址列表，并基于负载均衡算法，请求其中一个服务提供者实例</p>
+<pre><div class="md-fences"><div class="line-numbers"><span class="line-number">1</span><span class="line-number">2</span><span class="line-number">3</span><span class="line-number">4</span><span class="line-number">5</span><span class="line-number">6</span><span class="line-number">7</span><span class="line-number">8</span><span class="line-number">9</span><span class="line-number">10</span><span class="line-number">11</span><span class="line-number">12</span><span class="line-number">13</span><span class="line-number">14</span><span class="line-number">15</span><span class="line-number">16</span><span class="line-number">17</span><span class="line-number">18</span><span class="line-number">19</span></div><code class="hljs kotlin mark"><span class="hljs-meta">@Configuration</span>  #将RibbonConfig标注为配置类
+<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">RibbonConfig</span> </span>{
+    <span class="hljs-meta">@Bean</span>  #注入restTemplate()方法返回的RestTemplate对象
+    <span class="hljs-meta">@LoadBalanced</span>  #使RestTemplate具备了负载均衡的能力
+    <span class="hljs-keyword">public</span> RestTemplate restTemplate(RestTemplateBuilder builder){
+       <span class="hljs-keyword">return</span> builder.build();
+   }
+}
+
+<span class="hljs-comment">//调用</span>
+<span class="hljs-meta">@Service</span>
+<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">RibbonService</span> </span>{
+    <span class="hljs-meta">@Autowired</span>
+    RestTemplate restTemplate;
+    <span class="hljs-keyword">public</span> String hi(){
+        <span class="hljs-keyword">return</span> restTemplate.getForObject
+             (<span class="hljs-string">"http://eureka-provider/port"</span>,String<span class="hljs-class">.<span class="hljs-keyword">class</span>);</span>
+    }
+}
+</code><button class="copy-button">复制代码</button></div></pre>
+<p><strong>使用Ribbon实现负载均衡时，基本用法是注入一个RestTemplate，并使用@LoadBalanced注解标注RestTemplate，从而使RestTemplate具备负载均衡的能力。</strong></p>
+<h3 id="header-39"><strong>Ribbon的工作原理</strong>：</h3>
+<ul>
+<li>LoadBalancerClient提供的两个<strong>execute()方法用于执行请求</strong>，<strong>reconstructURI()方法用于重构URL</strong></li>
+<li>ServiceInstanceChooser接口定义一个<strong>choose()<strong>方法，该方法用于根据serviceId选择一个服务实例，即</strong>通过服务名选择服务实例</strong></li>
+<li><strong>IClientConfig clientConfig</strong>:用于配置负载均衡客户端，默认实现类是DefaultClientConfigImpl。</li>
+<li>**IRule rule:**用于配置负载均衡的策略，默认使用的是RoundRobinRule策略，也就是轮询策略。</li>
+<li>**IPing ping:**用于检查当前服务是否有响应，从而判断当前服务是否可用</li>
+<li><strong>ServerList serverList:</strong> 用于获取所有Server注册列表信息</li>
+<li><strong>ServerListFilter filter</strong>:定义了根据配置过滤或者动态获取符合条件的服务列表</li>
+</ul>
+<h3 id="header-41"><strong>Ribbon负载均衡策略</strong></h3>
+<p>默认情况下，Ribbon使用的负载均衡策略是<strong>轮询</strong></p>
+<p><strong>实现负载均衡算法的实现类</strong>：</p>
+<ul>
+<li>lRoundRobinRule：实现了按照线性轮询的方式依次选择服务的功能。</li>
+<li>WeightedResponseTimeRule: 它是对RoundRobinRule的扩展，会根据平均响应时间计算所有服务的权重</li>
+<li>ZoneAvoidanceRule：内部通过使用ZoneAvoidancePredicate和AvailabilityPredicate判断是否选择某一个服务，前者用于判断服务所在区域的性能是否可用，后者用于过滤掉连接数过多的服务。</li>
+<li>AvailabilityFilteringRule:过滤由于多次访问故障而处于断路器跳闸状态的服务</li>
+<li>BestAvailableRule：用于先过滤掉多次访问故障而处于断路跳闸状态的服务，然后选择一个并发量最小的服务</li>
+<li>RandomRule：该策略实现了从服务清单中随机选择一个服务的功能</li>
+</ul>
+<h2 id="header-45">声明式服务调用Feign</h2>
+<p>Feign是Netflix开发的<strong>声明式、模板化的HTTP客户端</strong></p>
+<p><strong>@EnableFeignClients</strong>注解开启Feign Client功能</p>
+<p>**@FeignClient(name=“eureka-provider”,configuration=LogConfiguration.class)**注解指定要调用的服务</p>
+<h3 id="header-49"><strong>Feign配置</strong></h3>
+<pre><div class="md-fences"><div class="line-numbers"><span class="line-number">1</span><span class="line-number">2</span><span class="line-number">3</span><span class="line-number">4</span><span class="line-number">5</span><span class="line-number">6</span><span class="line-number">7</span></div><code class="hljs yaml mark"><span class="hljs-attr">ribbon:</span>
+   <span class="hljs-attr">ConnectTimeout:</span> <span class="hljs-number">5000</span>         <span class="hljs-comment">#设置连接超时时间,默认为1s</span>
+   <span class="hljs-attr">ReadTimeout:</span> <span class="hljs-number">5000</span>              <span class="hljs-comment">#设置读取超时时间</span>
+   <span class="hljs-string">OkToRetryOnAllOperations：true</span>  <span class="hljs-comment">#对所有操作请求都进行重试</span>
+   <span class="hljs-string">MaxAutoRetries：1</span>                <span class="hljs-comment"># 对当前实例的重试次数</span>
+   <span class="hljs-string">MaxAutoRetriesNextServer：2</span>      <span class="hljs-comment"># 切换实例的重试次数</span>
+
+</code><button class="copy-button">复制代码</button></div></pre>
+<p><strong>指定服务配置</strong>：</p>
+<p>对于服务调用的超时时间可能会根据实际服务的特性做一些调整，<strong>所以仅仅依靠默认的全局配置是不行的</strong></p>
+<pre><div class="md-fences"><div class="line-numbers"><span class="line-number">1</span><span class="line-number">2</span><span class="line-number">3</span><span class="line-number">4</span><span class="line-number">5</span><span class="line-number">6</span><span class="line-number">7</span></div><code class="hljs yaml mark"><span class="hljs-attr">eureka-provider:</span>
+  <span class="hljs-attr">ribbon:</span>
+    <span class="hljs-attr">ConnectTimeout:</span> <span class="hljs-number">5000</span>         <span class="hljs-comment">#设置连接超时时间,默认为1s</span>
+    <span class="hljs-attr">ReadTimeout:</span> <span class="hljs-number">5000</span>               <span class="hljs-comment">#设置读取超时时间</span>
+    <span class="hljs-string">OkToRetryOnAllOperations：true</span> <span class="hljs-comment"># 对所有操作请求都进行重试</span>
+    <span class="hljs-string">MaxAutoRetries：1</span>               <span class="hljs-comment"># 对当前实例的重试次数</span>
+    <span class="hljs-string">MaxAutoRetriesNextServer：2</span>     <span class="hljs-comment"># 切换实例的重试次数</span>
+</code><button class="copy-button">复制代码</button></div></pre>
+<p><strong>日志配置：</strong></p>
+<p>logging.level.<feignclient>参数配置格式开启指定Feign消费者的DEBUG日志，其中<feignclient>指的是Feign消费者中需要开启DEBUG日志的接口的完整路径</feignclient></feignclient></p>
+<pre><div class="md-fences"><div class="line-numbers"><span class="line-number">1</span><span class="line-number">2</span><span class="line-number">3</span></div><code class="hljs css mark"><span class="hljs-selector-tag">logging</span>：
+   <span class="hljs-selector-tag">level</span>:
+     <span class="hljs-selector-tag">com</span><span class="hljs-selector-class">.itheima</span><span class="hljs-selector-class">.eurekafeignclient</span><span class="hljs-selector-class">.service</span><span class="hljs-selector-class">.FeignService</span>: <span class="hljs-selector-tag">DEBUG</span>
+</code><button class="copy-button">复制代码</button></div></pre>
+<p>Feign中的日志级别主要分为四类，具体介绍如下：</p>
+<ol>
+<li>NONE:不记录任何信息。</li>
+<li>BASIC:仅记录请求方法，URL以及响应状态码和执行时间。</li>
+<li>HEADERS：除了记录BASIC级别的信息之外，还会记录请求和响应的头信息。</li>
+<li>FULL:记录所有请求与响应的明细，包括头信息、请求体、元数据等</li>
+</ol>
+<pre><div class="md-fences"><div class="line-numbers"><span class="line-number">1</span><span class="line-number">2</span><span class="line-number">3</span><span class="line-number">4</span><span class="line-number">5</span><span class="line-number">6</span></div><code class="hljs java mark"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">LogConfiguration</span> </span>{
+    <span class="hljs-meta">@Bean</span>
+    Logger.<span class="hljs-function">Level <span class="hljs-title">feignLoggerLevel</span><span class="hljs-params">()</span></span>{
+        <span class="hljs-keyword">return</span> Logger.Level.FULL;
+    }
+}
+</code><button class="copy-button">复制代码</button></div></pre>
+<p><strong>其他配置：</strong></p>
+<p>支持对请求与响应进行<strong>GZIP压缩</strong>，以减少通信过程中的性能损耗</p>
+<pre><div class="md-fences"><div class="line-numbers"><span class="line-number">1</span><span class="line-number">2</span><span class="line-number">3</span><span class="line-number">4</span><span class="line-number">5</span><span class="line-number">6</span><span class="line-number">7</span><span class="line-number">8</span></div><code class="hljs yaml mark"><span class="hljs-attr">feign:</span>
+   <span class="hljs-string">compression：</span>
+       <span class="hljs-attr">request:</span>
+           <span class="hljs-attr">enabled:</span> <span class="hljs-literal">true</span>
+           <span class="hljs-attr">mime-types:</span> <span class="hljs-string">text/xml,application/xml,application/json</span>
+     	   <span class="hljs-attr">min-request-size:</span> <span class="hljs-number">2048</span>
+        <span class="hljs-attr">Response:</span>
+            <span class="hljs-attr">Enabled:</span> <span class="hljs-literal">true</span>
+</code><button class="copy-button">复制代码</button></div></pre>
+<p>Feign服务调用的工作原理可以分为以下几个步骤：</p>
+<p>（1）首先通过**@EnableFeignClients注解开启FeignClient功能**。程序启动时，会   通过该注解开启对@FeignClient注解的包扫描。</p>
+<p>（2）根据Feign规则实现接口，并在接口上面添加@FeignClient注解。</p>
+<p>（3）程序启动后，会进行包扫描，扫描所有的**@FeignClient注解类**，并将这些信息注入IoC容器。</p>
+<p>（4）当接口方法被调用时，通过JDK的代理生成具体的RequestTemplate模板对象。根据RequestTemplate再生成HTTP请求的Request对象，Request对象交给Client处理。</p>
+<h2 id="header-68">服务容错保护</h2>
+<h3 id="header-69"><strong>Hystrix简介</strong>：一款针对<strong>分布式系统延迟和容错</strong>的库。</h3>
+<p><strong>作用：<strong>通过添加延迟容忍和容错逻辑，从而</strong>控制分布式服务之间的交互</strong></p>
+<p>为什么需要使用熔断器：应用程序可能导致服务之间的延迟增加，从而备份队列、线程和其他资源，从而导致整个系统出现更多级联故障</p>
+<p>Hystrix的出现当延迟发生时，它会被限制在资源中，并包含<strong>回退逻辑</strong>，该逻辑决定在依赖发生任何类型故障时应作出何种响应</p>
+<h3 id="header-73"><strong>resilience4j</strong></h3>
+<p>Resilience4j 提供了一组<strong>高阶函数（装饰器），包括断路器，限流器，重试，隔离，可以对任何的函数式接口，lambda表达式，或方法的引用进行增强</strong>，并且这些装饰器可以进行叠加</p>
+<p><strong>resilience4j与Netflix Hystrix的一些区别</strong></p>
+<ul>
+<li>在Hystrix中，对外部系统的调用必须封装在一个Hystrix命令中。resilience4j提供了高阶函数(装饰器)</li>
+<li>当过多的调用超过一定的响应时间阈值时，甚至在远程系统失去响应并抛出异常之前，断路器就会打开。</li>
+<li>Hystrix只在半开状态下执行一次决定是否关闭断路器。resilience4j允许执行可配置的执行次数</li>
+<li>resilience4j提供了自定义的Reactor或RxJava操作符，可以装饰任何带有断路器、隔板或Ratelimiter的reactive类型。</li>
+<li>Hystrix和resilience4j会发出一个事件流</li>
+</ul>
+<pre><div class="md-fences"><div class="line-numbers"><span class="line-number">1</span><span class="line-number">2</span><span class="line-number">3</span><span class="line-number">4</span><span class="line-number">5</span><span class="line-number">6</span><span class="line-number">7</span><span class="line-number">8</span><span class="line-number">9</span><span class="line-number">10</span><span class="line-number">11</span><span class="line-number">12</span><span class="line-number">13</span><span class="line-number">14</span></div><code class="hljs kotlin mark"><span class="hljs-meta">@Service</span>
+<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">LocalItemService</span> </span>{
+    <span class="hljs-meta">@Autowired</span>
+    <span class="hljs-keyword">private</span> RestTemplate restTemplate;
+
+    <span class="hljs-meta">@CircuitBreaker(name = <span class="hljs-meta-string">"breaker"</span>, fallbackMethod = <span class="hljs-meta-string">"hi"</span>)</span>
+    <span class="hljs-keyword">public</span> String hi(String id) {
+        <span class="hljs-keyword">return</span> restTemplate.getForObject(<span class="hljs-string">"http://eureka-provider/hi?id="</span> + id, String<span class="hljs-class">.<span class="hljs-keyword">class</span>);</span>
+    }
+
+    <span class="hljs-keyword">public</span> String hi(Exception e) {
+        <span class="hljs-keyword">return</span> String.format(<span class="hljs-string">"Hi，your message is : %s but request bad."</span>);
+    }
+}
+</code><button class="copy-button">复制代码</button></div></pre>
+<p>被**@CircuitBreaker<strong>注解修饰的hi()方法就启动了resilience4j熔断器的功能。fallbackMethod属性定义的是</strong>处理回退（fallback）逻辑**的方法。</p>
+<h3 id="header-79"><strong>在Feign中使用Resilience4j熔断</strong></h3>
+<p>将<strong>openfeign.circuitbreaker.enabled</strong>设置为true</p>
+<pre><div class="md-fences"><div class="line-numbers"><span class="line-number">1</span><span class="line-number">2</span><span class="line-number">3</span><span class="line-number">4</span><span class="line-number">5</span></div><code class="hljs yaml mark"><span class="hljs-attr">spring:</span>
+  <span class="hljs-attr">cloud:</span>
+    <span class="hljs-attr">openfeign:</span>
+      <span class="hljs-attr">circuitbreaker:</span>
+        <span class="hljs-attr">enabled:</span> <span class="hljs-literal">true</span>
+</code><button class="copy-button">复制代码</button></div></pre>
+<pre><div class="md-fences"><div class="line-numbers"><span class="line-number">1</span><span class="line-number">2</span><span class="line-number">3</span><span class="line-number">4</span><span class="line-number">5</span><span class="line-number">6</span><span class="line-number">7</span></div><code class="hljs less mark"><span class="hljs-comment">//项目接口</span>
+<span class="hljs-variable">@FeignClient</span> (value = <span class="hljs-string">"eureka-provider"</span>,
+              fallback = LocalItemServiceImpl.class)
+public interface LocalItemService {
+     <span class="hljs-variable">@RequestMapping</span>(value = <span class="hljs-string">"/hi"</span>, method = RequestMethod.GET)
+     public String hi(<span class="hljs-variable">@RequestParam</span>(value = <span class="hljs-string">"id"</span>) String id);
+}  
+</code><button class="copy-button">复制代码</button></div></pre>
+<p>@FeignClient注解中，增加<strong>fallback属性配置</strong>，指定LocalItemServiceImpl类为失败逻辑处理类</p>
+<pre><div class="md-fences"><div class="line-numbers"><span class="line-number">1</span><span class="line-number">2</span><span class="line-number">3</span><span class="line-number">4</span><span class="line-number">5</span><span class="line-number">6</span><span class="line-number">7</span><span class="line-number">8</span><span class="line-number">9</span><span class="line-number">10</span></div><code class="hljs php mark"><span class="hljs-comment">//失败逻辑处理类</span>
+@Component
+<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">LocalItemServiceImpl</span> <span class="hljs-keyword">implements</span> <span class="hljs-title">LocalItemService</span>
+ </span>{
+    @Override
+    <span class="hljs-keyword">public</span> String hi(String id) {
+        <span class="hljs-keyword">return</span> String.format(<span class="hljs-string">"Hi，your message is : %s but request 
+        bad."</span>,id);
+    }
+}
+</code><button class="copy-button">复制代码</button></div></pre>
+<h2 id="header-85">网关服务Gateway</h2>
+<p>服务网关相当于介于客户端和服务端之间的中间层，<strong>所有的外部请求都会先经过服务网关进行调度和过滤</strong>。</p>
+<p>客户端与微服务直接通信，就会产生许多问题：</p>
+<ul>
+<li>多次请求不同的微服务，使客户端变得更为复杂</li>
+<li>存在跨域请求</li>
+<li>难以重构，随着项目的迭代，可能需要重新划分微服务</li>
+<li>某些微服务可能会设置防火墙等不友好的协议，难以做到直接访问</li>
+</ul>
+<p>核心概念：</p>
+<ul>
+<li><strong>路由(Route)</strong>：由一个<strong>ID</strong>，一个目标<strong>URI</strong>(最终路由到的url地址)，一组<strong>断言</strong>(匹配条件判断)和一组<strong>过滤器</strong>定义。如果断言为真，则路由匹配。</li>
+<li><strong>断言(Predicate)</strong>：通过断言匹配http请求中的任何内容(请求头、请求参数等)，如果匹配成功，则匹配断言所在路由。</li>
+<li><strong>过滤器(Filter)</strong>：在请求前后执行业务逻辑，比如鉴权、日志监控、流量控制、修改请求头、修改响应等。</li>
+</ul>
+<h3 id="header-91"><strong>Gateway的路由映射规则配置</strong></h3>
+<p><uri>用来指定路由的具体服务名，<path>用来配置匹配的请求映射地址</path></uri></p>
+<pre><div class="md-fences"><div class="line-numbers"><span class="line-number">1</span><span class="line-number">2</span><span class="line-number">3</span><span class="line-number">4</span><span class="line-number">5</span><span class="line-number">6</span><span class="line-number">7</span><span class="line-number">8</span></div><code class="hljs dts mark"><span class="hljs-symbol">spring:</span>
+<span class="hljs-symbol">  cloud:</span>
+<span class="hljs-symbol">    gateway:</span>
+<span class="hljs-symbol">      routes:</span>
+        - id: route1
+<span class="hljs-symbol">          uri:</span> http:<span class="hljs-comment">//localhost:8764/</span>
+<span class="hljs-symbol">          predicates:</span>
+            - Path=/hi
+</code><button class="copy-button">复制代码</button></div></pre>
+<pre><div class="md-fences"><div class="line-numbers"><span class="line-number">1</span><span class="line-number">2</span><span class="line-number">3</span><span class="line-number">4</span><span class="line-number">5</span><span class="line-number">6</span></div><code class="hljs yaml mark"><span class="hljs-attr">Gateway :</span> 
+  <span class="hljs-attr">ignored-patterns :</span> <span class="hljs-string">/**/hi/**</span>       <span class="hljs-comment">#忽略表达式</span>
+  <span class="hljs-attr">routes :</span>
+    <span class="hljs-attr">eureka-consumer :</span>                    
+      <span class="hljs-attr">path :</span> <span class="hljs-string">/eureka-consumer/**</span>
+      <span class="hljs-attr">serviceId :</span> <span class="hljs-string">eureka-consumer</span>  <span class="hljs-comment">#转发后的服务名</span>
+</code><button class="copy-button">复制代码</button></div></pre>
+<p>strip-prefix: false 关闭移除代理前缀</p>
+<p>StripPrefix=1的意思是去掉第一个前缀，也可以设置为- StripPrefix=2，以此类推</p>
+<h3 id="header-97"><strong>Gateway与Resilience4J结合实现熔断</strong></h3>
+<p>在网关项目gateway中创建FallbackController控制器，暴露/fallback 接口，用于处理回退逻辑</p>
+<pre><div class="md-fences"><div class="line-numbers"><span class="line-number">1</span><span class="line-number">2</span><span class="line-number">3</span><span class="line-number">4</span><span class="line-number">5</span></div><code class="hljs less mark"><span class="hljs-attribute">filters</span>:
+ - <span class="hljs-attribute">name</span>: CircuitBreaker
+   <span class="hljs-attribute">args</span>:
+      <span class="hljs-attribute">name</span>: userService
+      <span class="hljs-attribute">fallbackUri</span>: <span class="hljs-attribute">forward</span>:/fallback
+</code><button class="copy-button">复制代码</button></div></pre>
+<p><strong>网关处理类</strong></p>
+<pre><div class="md-fences"><div class="line-numbers"><span class="line-number">1</span><span class="line-number">2</span><span class="line-number">3</span><span class="line-number">4</span><span class="line-number">5</span><span class="line-number">6</span><span class="line-number">7</span></div><code class="hljs kotlin mark"><span class="hljs-meta">@RestController</span>
+<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">FallbackController</span> </span>{
+    <span class="hljs-meta">@GetMapping(<span class="hljs-meta-string">"/fallback"</span>)</span>
+    <span class="hljs-keyword">public</span> String fallbackMethod() {
+        <span class="hljs-keyword">return</span> <span class="hljs-string">"myfallback"</span>;
+    }
+}
+</code><button class="copy-button">复制代码</button></div></pre>
+<h3 id="header-102"><strong>Gateway的过滤器</strong></h3>
+<ol>
+<li>pre：该过滤器会在请求被路由之前调用。我们可利用这种过滤器实现身份验证、在集群中选择请求的微服务、记录调试信息等。</li>
+<li>route：负责请求转发到服务。 原始请求在此构建，并使用Apache HttpClient或Netflix Ribbon发送原始请求。</li>
+<li>post:在route和error过滤器之后被调用，可以在响应消息中添加标准HTTP  Header、收集统计信息和指标，以及将响应发送给客户端等。</li>
+<li>error:处理请求发送错误时被调用。</li>
+</ol>
+<p><strong>自定义Gateway过滤器</strong></p>
+<p>继承GatewayFilter，并实现 GatewayFilter中的四个抽象方法，包括filterType()、 filterOrder()、shouldFilter()和run()</p>
+<pre><div class="md-fences"><div class="line-numbers"><span class="line-number">1</span><span class="line-number">2</span><span class="line-number">3</span><span class="line-number">4</span><span class="line-number">5</span><span class="line-number">6</span><span class="line-number">7</span><span class="line-number">8</span><span class="line-number">9</span><span class="line-number">10</span><span class="line-number">11</span><span class="line-number">12</span><span class="line-number">13</span><span class="line-number">14</span><span class="line-number">15</span><span class="line-number">16</span><span class="line-number">17</span><span class="line-number">18</span><span class="line-number">19</span><span class="line-number">20</span><span class="line-number">21</span><span class="line-number">22</span><span class="line-number">23</span><span class="line-number">24</span><span class="line-number">25</span><span class="line-number">26</span><span class="line-number">27</span><span class="line-number">28</span><span class="line-number">29</span><span class="line-number">30</span><span class="line-number">31</span><span class="line-number">32</span><span class="line-number">33</span><span class="line-number">34</span></div><code class="hljs d mark"><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> PreRequestLogFilter extends GatewayFilter {
+    <span class="hljs-keyword">private</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">final</span> Logger logger =    
+            LoggerFactory.getLogger(
+		PreRequestLogFilter.<span class="hljs-keyword">class</span>);
+    <span class="hljs-keyword">@Override</span>
+    <span class="hljs-keyword">public</span> String filterType(){
+		<span class="hljs-keyword">return</span> <span class="hljs-string">"pre"</span>;
+	}
+	@<span class="hljs-number">0</span>verride
+	<span class="hljs-keyword">public</span> <span class="hljs-keyword">int</span> filter0rder(){
+		<span class="hljs-keyword">return</span> <span class="hljs-number">1</span>;
+	}
+    <span class="hljs-keyword">@Override</span>
+	<span class="hljs-keyword">public</span> boolean shouldFilter(){
+		<span class="hljs-keyword">return</span> <span class="hljs-literal">true</span>;
+	}
+	<span class="hljs-keyword">@Override</span>
+	<span class="hljs-keyword">public</span> Object run(){
+         RequestContext ctx = RequestContext.getCurrentContext();
+         HttpServletRequest request = ctx.getRequest();
+         logger.info(<span class="hljs-string">"进入访问过滤器，访问的url:{}，访问的方法：  
+         {}"</span>,request.getRequestURL(),request.getMethod());
+         String accessToken = request.getHeader(<span class="hljs-string">"accessToken"</span>); 
+         <span class="hljs-keyword">if</span>(StringUtils.isEmpty(accessToken)) {
+                logger.info(<span class="hljs-string">"当前请求没有accessToken"</span>);
+                ctx.setSendGatewayResponse(<span class="hljs-literal">false</span>);
+                ctx.setResponseStatusCode(<span class="hljs-number">401</span>);
+                <span class="hljs-keyword">return</span> <span class="hljs-literal">null</span>;
+            }
+            logger.info(<span class="hljs-string">"请求通过过滤器"</span>);
+            <span class="hljs-keyword">return</span> <span class="hljs-literal">null</span>;}
+	}
+}
+
+</code><button class="copy-button">复制代码</button></div></pre>
+<p>禁用掉部分过滤器，只需设置Gateway.<simpleclassname>.<filtertype>.disable=true,就可以禁用SimpleClassName所对应的过滤器。例如：org.springframework.cloud.netflix.Gateway.filters.post.SentResponseFilter，只需要设置Gateway.SendResponseFilter.pre.disable=true就可以了。</filtertype></simpleclassname></p>
+<h2 id="header-109">分布式配置中心Spring Cloud Config</h2>
+<ul>
+<li>Config Server：</li>
+<li>
+<ul>
+<li>分布式配置中心，独立的微服务应用，用来连接配置仓库（Git）并为客户端提供获取配置信息的访问接口。</li>
+<li>对配置文件中的属性进行加密和解密。</li>
+<li>通过使用@<strong>EnableConfigServer</strong>注解可以简单地嵌入Spring Boot的应用中。</li>
+</ul>
+</li>
+<li>Config Client：</li>
+<li>
+<ul>
+<li>绑定配置服务器，使用远程仓库的配置文件中的属性来初始化Spring容器。</li>
+<li>对配置文件中的属性进行加密和解密。</li>
+</ul>
+</li>
+</ul>
+<p>Config Server读取配置文件的方式：</p>
+<ul>
+<li>本地仓库读取配置文件：Config Server通过暴露的HTTP API接口读取配置文件</li>
+</ul>
+<pre><div class="md-fences"><div class="line-numbers"><span class="line-number">1</span><span class="line-number">2</span><span class="line-number">3</span><span class="line-number">4</span><span class="line-number">5</span><span class="line-number">6</span><span class="line-number">7</span><span class="line-number">8</span><span class="line-number">9</span><span class="line-number">10</span><span class="line-number">11</span><span class="line-number">12</span><span class="line-number">13</span><span class="line-number">14</span></div><code class="language-java hljs mark"><span class="hljs-comment">//config-server</span>
+spring :
+      profiles:
+         active: <span class="hljs-keyword">native</span>  #本地读取配置文件
+      cloud:
+        config:
+          server:
+            <span class="hljs-keyword">native</span>:
+              search-locations: classpath:/shared #读取路径
+   application:
+     name: config-server
+server:
+  port: <span class="hljs-number">8769</span>
+
+</code><button class="copy-button">复制代码</button></div></pre>
+<pre><div class="md-fences"><div class="line-numbers"><span class="line-number">1</span><span class="line-number">2</span><span class="line-number">3</span><span class="line-number">4</span><span class="line-number">5</span><span class="line-number">6</span><span class="line-number">7</span><span class="line-number">8</span><span class="line-number">9</span><span class="line-number">10</span><span class="line-number">11</span></div><code class="language-java hljs mark"><span class="hljs-comment">//config-client</span>
+spring:
+  application:
+    name: config-client
+  config:
+    <span class="hljs-keyword">import</span>: optional:configserver:http:<span class="hljs-comment">//localhost:8769 #指定读取配置文件地址</span>
+  profiles:
+    active: dev  #指定配置文件开发环境
+  cloud:
+    config:
+      fail-fast: <span class="hljs-keyword">true</span> #是否开启快速失败
+</code><button class="copy-button">复制代码</button></div></pre>
+<ul>
+<li>Git仓库读取配置文件</li>
+</ul>
+<pre><div class="md-fences"><div class="line-numbers"><span class="line-number">1</span><span class="line-number">2</span><span class="line-number">3</span><span class="line-number">4</span><span class="line-number">5</span><span class="line-number">6</span><span class="line-number">7</span><span class="line-number">8</span><span class="line-number">9</span><span class="line-number">10</span><span class="line-number">11</span><span class="line-number">12</span><span class="line-number">13</span><span class="line-number">14</span><span class="line-number">15</span></div><code class="language-java hljs mark"><span class="hljs-comment">//config-server</span>
+server:
+  port: <span class="hljs-number">8769</span>
+spring :
+  application:
+     name : config-server
+  cloud :
+    config :
+      server:
+        git:
+         uri: https:<span class="hljs-comment">//github.com/itcast132465/hello</span>
+         serchPaths: cong	 #远程仓库的文件夹地址
+         username: itcast132465	 #登录名
+         password: itcast132465  #密码
+         label: master	         #Git仓库的分支名
+</code><button class="copy-button">复制代码</button></div></pre>
+<h3 id="header-117"><strong>整合spring Cloud Bus实现配置自动刷新</strong></h3>
+<p>改造Config Client，在需要动态刷新配置的类ConfigClientApplication上加上注解**@RefreshScope**。</p>
+<h2 id="header-120">基于Spring Cloud的消息驱动Stream</h2>
+<p>Spring Cloud Stream是一个<strong>构建消息驱动微服务</strong>的框架</p>
+<p>使用Stream构建的应用程序与消息中间件之间是通过绑定器<strong>Binder</strong>相关联的。<strong>Binder是作为输入通道（inputs）和输出通道（outputs）与消息中间件之间的桥梁进行消息通信</strong></p>
+<h3 id="header-124"><strong>消息消费者类</strong></h3>
+<pre><div class="md-fences"><div class="line-numbers"><span class="line-number">1</span><span class="line-number">2</span><span class="line-number">3</span><span class="line-number">4</span><span class="line-number">5</span><span class="line-number">6</span><span class="line-number">7</span><span class="line-number">8</span><span class="line-number">9</span></div><code class="language-java hljs mark"><span class="hljs-meta">@EnableBinding</span>(Sink<span class="hljs-class">.<span class="hljs-keyword">class</span>)
+<span class="hljs-title">public</span> <span class="hljs-title">class</span> <span class="hljs-title">SinkReceiver</span> </span>{
+    <span class="hljs-keyword">private</span> <span class="hljs-keyword">static</span> Logger logger= 
+      LoggerFactory.getLogger(StreamHelloApplication<span class="hljs-class">.<span class="hljs-keyword">class</span>)</span>;
+    <span class="hljs-meta">@StreamListener</span>(Sink.INPUT)
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">receive</span><span class="hljs-params">(Object payload)</span></span>{
+    logger.info(<span class="hljs-string">"Received:"</span>+payload);
+ }
+}
+</code><button class="copy-button">复制代码</button></div></pre>
+<p><strong>@EnableBinding注解</strong>：用来指定一个或多个定义了@Input或@Output注解的接口，以此实现对消息通道(Channel）的绑定。 Sink接口是Spring Cloud Stream默认实现的对输入消息通道绑定的接口。</p>
+<p><strong>@StreamListener注解</strong>：主要是修饰方法，用于<strong>将被修饰的方法注册为消息中间件上数据流的事件监听器</strong>，注解中的属性值对应了监听的消息通道名。</p>
+<p>应用程序在声明一个随机队列之后 ，通过<strong>RabbitMessageChannelBinder</strong>将自己绑定为127.0.0.1:5672的消费者</p>
+<h3 id="header-129">Stream的发布-订阅模式</h3>
+<p><strong>stream-rabbitmq-provider</strong></p>
+<pre><div class="md-fences"><div class="line-numbers"><span class="line-number">1</span><span class="line-number">2</span><span class="line-number">3</span><span class="line-number">4</span><span class="line-number">5</span><span class="line-number">6</span><span class="line-number">7</span><span class="line-number">8</span><span class="line-number">9</span><span class="line-number">10</span><span class="line-number">11</span></div><code class="language-java hljs mark"><span class="hljs-meta">@EnableBinding</span>(Source<span class="hljs-class">.<span class="hljs-keyword">class</span>)  //表示绑定<span class="hljs-title">Source</span>接口
+@<span class="hljs-title">RestController</span>
+<span class="hljs-title">public</span> <span class="hljs-title">class</span> <span class="hljs-title">Provider</span> </span>{
+    <span class="hljs-meta">@Autowired</span>
+    <span class="hljs-meta">@Output</span>(Source.OUTPUT)
+    <span class="hljs-keyword">private</span> MessageChannel channel;
+    <span class="hljs-meta">@GetMapping</span>(<span class="hljs-string">"send"</span>)
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">send</span><span class="hljs-params">()</span> </span>{
+    channel.send(MessageBuilder.withPayload(<span class="hljs-string">"Hello World!"</span>).build());  <span class="hljs-comment">//表示发布了一条“Hello  World”的消息。</span>
+    }
+}
+</code><button class="copy-button">复制代码</button></div></pre>
+<pre><div class="md-fences"><div class="line-numbers"><span class="line-number">1</span><span class="line-number">2</span><span class="line-number">3</span><span class="line-number">4</span><span class="line-number">5</span><span class="line-number">6</span></div><code class="language-java hljs mark">spring
+  cloud:
+    stream:
+      bindings:
+        myOutput:
+          destination: minestream  #指定输入通道对应的主题名
+</code><button class="copy-button">复制代码</button></div></pre>
+<p><strong>stream-rabbitmq-consumer</strong></p>
+<pre><div class="md-fences"><div class="line-numbers"><span class="line-number">1</span><span class="line-number">2</span><span class="line-number">3</span><span class="line-number">4</span><span class="line-number">5</span><span class="line-number">6</span><span class="line-number">7</span></div><code class="language-java hljs mark"><span class="hljs-meta">@EnableBinding</span>(Sink<span class="hljs-class">.<span class="hljs-keyword">class</span>)
+<span class="hljs-title">public</span> <span class="hljs-title">class</span> <span class="hljs-title">Consumer</span> </span>{
+    <span class="hljs-meta">@StreamListener</span>(Sink.INPUT)  <span class="hljs-comment">//表示将receiver方法注册为INPUT消息通道的监听处理器</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">receiver</span><span class="hljs-params">(String message)</span> </span>{
+        System.out.println(<span class="hljs-string">"接收到MQ消息:"</span> + message);
+    }
+}
+</code><button class="copy-button">复制代码</button></div></pre>
+<pre><div class="md-fences"><div class="line-numbers"><span class="line-number">1</span><span class="line-number">2</span><span class="line-number">3</span><span class="line-number">4</span><span class="line-number">5</span><span class="line-number">6</span></div><code class="hljs dts mark">spring
+<span class="hljs-symbol">  cloud:</span>
+<span class="hljs-symbol">    stream:</span>
+<span class="hljs-symbol">      bindings:</span>
+<span class="hljs-symbol">        myIutput:</span>
+<span class="hljs-symbol">          destination:</span> minestream  <span class="hljs-meta">#指定输出通道对应的主题名</span>
+</code><button class="copy-button">复制代码</button></div></pre>
+<h3 id="header-136">Stream的消费组和消息分区</h3>
+<ul>
+<li><strong>消费组：防止对消息的重复处理</strong></li>
+<li><strong>消费分区：确保具有共同特征标识的数据由同一个消费者实例进行处理</strong></li>
+</ul>
+<p>通过<strong>spring.cloud.stream.bindings.input. group</strong>属性为应用指定一个组名</p>
+<pre><div class="md-fences"><div class="line-numbers"><span class="line-number">1</span><span class="line-number">2</span><span class="line-number">3</span><span class="line-number">4</span><span class="line-number">5</span><span class="line-number">6</span><span class="line-number">7</span><span class="line-number">8</span><span class="line-number">9</span><span class="line-number">10</span><span class="line-number">11</span><span class="line-number">12</span><span class="line-number">13</span><span class="line-number">14</span><span class="line-number">15</span><span class="line-number">16</span></div><code class="hljs yaml mark"> <span class="hljs-attr">spring:</span>
+       <span class="hljs-attr">application:</span>
+          <span class="hljs-attr">name:</span> <span class="hljs-string">stream-rabbitmq-provider</span>
+       <span class="hljs-attr">rabbitmq:</span>
+          <span class="hljs-attr">host:</span> <span class="hljs-string">localhost</span>
+          <span class="hljs-attr">port:</span> <span class="hljs-number">5672</span>
+          <span class="hljs-attr">username:</span> <span class="hljs-string">guest</span>
+          <span class="hljs-attr">password:</span> <span class="hljs-string">guest</span>
+       <span class="hljs-attr">cloud:</span>
+         <span class="hljs-attr">stream:</span>
+            <span class="hljs-attr">bindings:</span>
+              <span class="hljs-attr">input:</span>
+                <span class="hljs-attr">destination:</span> <span class="hljs-string">minestream</span>
+                <span class="hljs-attr">group:</span> <span class="hljs-string">stream</span>                 
+<span class="hljs-attr">server:</span>
+  <span class="hljs-attr">port:</span> <span class="hljs-number">8898</span>
+</code><button class="copy-button">复制代码</button></div></pre>
+<p><strong>消费分区</strong>：</p>
+<ol>
+<li>
+<p><strong>提供者</strong>：</p>
+<pre><div class="md-fences"><div class="line-numbers"><span class="line-number">1</span><span class="line-number">2</span><span class="line-number">3</span><span class="line-number">4</span><span class="line-number">5</span><span class="line-number">6</span><span class="line-number">7</span><span class="line-number">8</span><span class="line-number">9</span><span class="line-number">10</span><span class="line-number">11</span><span class="line-number">12</span><span class="line-number">13</span><span class="line-number">14</span><span class="line-number">15</span><span class="line-number">16</span><span class="line-number">17</span><span class="line-number">18</span><span class="line-number">19</span></div><code class="hljs yaml mark"><span class="hljs-attr">spring:</span>
+      <span class="hljs-attr">application:</span>
+         <span class="hljs-attr">name:</span> <span class="hljs-string">stream-rabbitmq-provider</span>
+      <span class="hljs-attr">rabbitmq:</span>
+         <span class="hljs-attr">host:</span> <span class="hljs-string">localhost</span>
+         <span class="hljs-attr">port:</span> <span class="hljs-number">5672</span>
+         <span class="hljs-attr">username:</span> <span class="hljs-string">guest</span>
+         <span class="hljs-attr">password:</span> <span class="hljs-string">guest</span>
+      <span class="hljs-attr">cloud:</span>
+    <span class="hljs-attr">stream:</span>
+      <span class="hljs-attr">bindings:</span>
+        <span class="hljs-attr">output:</span>
+          <span class="hljs-attr">destination:</span> <span class="hljs-string">minestream</span>
+     <span class="hljs-attr">group:</span> <span class="hljs-string">stream</span>
+      <span class="hljs-attr">provider:</span>
+          <span class="hljs-attr">partitionKeyExpression:</span> <span class="hljs-number">1</span>   <span class="hljs-comment">#指定了能接收到信息的消费者的分区ID</span>
+          <span class="hljs-attr">partitionCount:</span> <span class="hljs-number">2</span>        <span class="hljs-comment">#指定了参与消息分区的消费者数量</span>
+<span class="hljs-attr">server:</span>
+  <span class="hljs-attr">port:</span> <span class="hljs-number">8898</span>
+</code><button class="copy-button">复制代码</button></div></pre>
+</li>
+<li>
+<p><strong>消费者：</strong></p>
+</li>
+</ol>
+<pre><div class="md-fences"><div class="line-numbers"><span class="line-number">1</span><span class="line-number">2</span><span class="line-number">3</span><span class="line-number">4</span><span class="line-number">5</span><span class="line-number">6</span><span class="line-number">7</span><span class="line-number">8</span><span class="line-number">9</span><span class="line-number">10</span><span class="line-number">11</span><span class="line-number">12</span><span class="line-number">13</span><span class="line-number">14</span><span class="line-number">15</span><span class="line-number">16</span><span class="line-number">17</span><span class="line-number">18</span><span class="line-number">19</span><span class="line-number">20</span><span class="line-number">21</span></div><code class="hljs yaml mark"><span class="hljs-attr">server:</span>
+  <span class="hljs-attr">port:</span> <span class="hljs-number">9899</span>
+<span class="hljs-attr">spring:</span>
+  <span class="hljs-attr">application:</span>
+    <span class="hljs-attr">name:</span> <span class="hljs-string">stream-rabbitmq-consumer</span>
+  <span class="hljs-attr">cloud:</span>
+    <span class="hljs-attr">stream:</span>
+      <span class="hljs-attr">bindings:</span>
+        <span class="hljs-attr">input:</span>
+          <span class="hljs-attr">destination:</span> <span class="hljs-string">minestream</span>
+          <span class="hljs-attr">group:</span> <span class="hljs-string">stream</span>    
+          <span class="hljs-attr">consumer:</span>
+            <span class="hljs-attr">partitioned:</span> <span class="hljs-literal">true</span>    <span class="hljs-comment">#通过该参数开启消费者消息分区功能</span>
+      <span class="hljs-attr">instance-count:</span> <span class="hljs-number">2</span>     <span class="hljs-comment">#指定了当前消费者的总实例数量</span>
+      <span class="hljs-attr">instance-index:</span> <span class="hljs-number">1</span>      <span class="hljs-comment">#设置当前实例的分索引号，从0开始</span>
+<span class="hljs-attr">rabbitmq:</span>
+   <span class="hljs-attr">host:</span> <span class="hljs-string">localhost</span>
+   <span class="hljs-attr">port:</span> <span class="hljs-number">5672</span>
+   <span class="hljs-attr">username:</span> <span class="hljs-string">guest</span>
+   <span class="hljs-attr">password:</span> <span class="hljs-string">guest</span>
+
+</code><button class="copy-button">复制代码</button></div></pre>
+<h2 id="header-143">分布式服务追踪Micrometer</h2>
+<h3 id="header-144"><strong>Stream Cloud Sleuth</strong></h3>
+<p>在整个分布式系统中跟踪一个用户请求的过程</p>
+<p><strong>特点：</strong></p>
+<ol>
+<li>提供链路追踪</li>
+<li>性能分析</li>
+<li>数据分析</li>
+<li>可视化</li>
+</ol>
+<p><strong>专业术语：</strong></p>
+<ul>
+<li><strong>Span</strong>：跨度，表示一次调用的过程，一次跟踪包含多次调用过程。</li>
+<li><strong>Trace</strong>：表示整个追踪过程，从用户发起请求到最终的响应。</li>
+<li><strong>Annotation</strong>：用来及时记录一个事件的存在，一些核心Annotations用来定义一个请求的开始和结束。</li>
+</ul>
+<p><strong>Annotation主要包括以下几个事件标识：</strong></p>
+<ul>
+<li><strong>cs</strong>: Client Sent, 表示客户端发送了请求，这个标识意味着跨度的开始。</li>
+<li><strong>sr</strong>: Server Received,表示服务端接收到请求，并开始进行处理。</li>
+<li><strong>ss</strong>: Server Sent,表示服务器端完成请求的处理，并对客户端做出响应。</li>
+<li><strong>cr</strong>: Client Received, 表示客户端接收到响应，意味着整个跨度的结束。</li>
+</ul>
+<p>链路通过<strong>TraceId唯一标识，Span标识发起的请求信息</strong>，各span通过parent id 关联起来 (Span:表示调用链路来源，通俗的理解span就是一次请求信息)。</p>
+<h3 id="header-153">Micrometer Tracing整合Zipkin</h3>
+<p><strong>Zipkin是一个分布式追踪系统，主要用于收集、管理微服务产生的数据</strong></p>
+<p><strong>Zipkin服务端的作用</strong>：用于进行数据的采集存储、数据的分析和数据的展示等。</p>
+<pre><div class="md-fences"><div class="line-numbers"><span class="line-number">1</span><span class="line-number">2</span></div><code class="language-java hljs mark"><span class="hljs-comment">//启用jar包的命令</span>
+java -jar zipkin-server-<span class="hljs-number">3.4</span><span class="hljs-number">.2</span>-exec.jar
+</code><button class="copy-button">复制代码</button></div></pre>
+<p>依赖：</p>
+<pre><div class="md-fences"><div class="line-numbers"><span class="line-number">1</span><span class="line-number">2</span><span class="line-number">3</span><span class="line-number">4</span><span class="line-number">5</span><span class="line-number">6</span><span class="line-number">7</span><span class="line-number">8</span><span class="line-number">9</span><span class="line-number">10</span><span class="line-number">11</span><span class="line-number">12</span><span class="line-number">13</span><span class="line-number">14</span><span class="line-number">15</span><span class="line-number">16</span><span class="line-number">17</span><span class="line-number">18</span><span class="line-number">19</span><span class="line-number">20</span><span class="line-number">21</span><span class="line-number">22</span><span class="line-number">23</span><span class="line-number">24</span><span class="line-number">25</span><span class="line-number">26</span><span class="line-number">27</span><span class="line-number">28</span><span class="line-number">29</span><span class="line-number">30</span><span class="line-number">31</span><span class="line-number">32</span><span class="line-number">33</span><span class="line-number">34</span><span class="line-number">35</span><span class="line-number">36</span><span class="line-number">37</span></div><code class="hljs dts mark"><span class="hljs-comment">//micrometer-tracing指标追踪</span>
+<span class="hljs-params">&lt;dependency&gt;</span>
+	<span class="hljs-params">&lt;groupId&gt;</span>io.micrometer<span class="hljs-params">&lt;/groupId&gt;</span>   				
+	<span class="hljs-params">&lt;artifactId&gt;</span>micrometer-tracing<span class="hljs-params">&lt;/artifactId&gt;</span> 
+<span class="hljs-params">&lt;/dependency&gt;</span>
+
+<span class="hljs-comment">//micrometer-tracing-bridge-brave适配zipkin的桥接包</span>
+<span class="hljs-params">&lt;dependency&gt;</span>
+	<span class="hljs-params">&lt;groupId&gt;</span>io.micrometer<span class="hljs-params">&lt;/groupId&gt;</span>
+    <span class="hljs-params">&lt;artifactId&gt;</span>micrometer-tracing-bridge-brave<span class="hljs-params">&lt;/artifactId
+&lt;/dependency&gt;</span>
+
+<span class="hljs-comment">//一个基于度量库 Micrometer的观测模块，用于收集应用程序的度量数据。</span>
+<span class="hljs-params">&lt;dependency&gt;</span>
+	<span class="hljs-params">&lt;groupId&gt;</span>io.micrometer<span class="hljs-params">&lt;/groupId&gt;</span>
+	<span class="hljs-params">&lt;artifactId&gt;</span>micrometer-observation<span class="hljs-params">&lt;/artifactId&gt;</span>
+<span class="hljs-params">&lt;/dependency&gt;</span>
+
+<span class="hljs-comment">//一个Feign HTTP客户端的Micrometer模块，用于收集客户端请求的度量数据。</span>
+<span class="hljs-params">&lt;dependency&gt;</span>
+	<span class="hljs-params">&lt;groupId&gt;</span>io.github.openfeign<span class="hljs-params">&lt;/groupId&gt;</span>
+	<span class="hljs-params">&lt;artifactId&gt;</span>feign-micrometer<span class="hljs-params">&lt;/artifactId&gt;</span>
+ <span class="hljs-params">&lt;/dependency&gt;</span>
+ 
+ <span class="hljs-comment">//一个用于将 Brave 跟踪数据报告到Zipkin 跟踪系统的库。</span>
+ <span class="hljs-params">&lt;dependency&gt;</span>
+ 	<span class="hljs-params">&lt;groupId&gt;</span>io.zipkin.reporter2<span class="hljs-params">&lt;/groupId&gt;</span>
+ 	<span class="hljs-params">&lt;artifactId&gt;</span>zipkin-reporter-brave<span class="hljs-params">&lt;/artifactId&gt;</span>
+ <span class="hljs-params">&lt;/dependency&gt;</span>
+
+<span class="hljs-comment">//核心依赖</span>
+<span class="hljs-comment">//spring-boot-starter-actuator：SpringBoot框架的一个模块用于监视和管理应用程序。</span>
+<span class="hljs-params">&lt;dependency&gt;</span>
+	<span class="hljs-params">&lt;groupId&gt;</span>org.springframework.boot<span class="hljs-params">&lt;/groupId&gt;</span>
+	<span class="hljs-params">&lt;artifactId&gt;</span>spring-boot-starter-actuator<span class="hljs-params">&lt;/artifactId&gt;</span>
+<span class="hljs-params">&lt;/dependency&gt;</span>
+
+</code><button class="copy-button">复制代码</button></div></pre>
+</div></div></div></div><!----></div></div>
+</main>
+<!-- 页脚 -->
+<footer>
+  <p>&copy; 2025 My Blog</p>
+</footer>
+
+</body>
+</html>

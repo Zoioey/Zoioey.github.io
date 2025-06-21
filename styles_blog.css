@@ -1,0 +1,227 @@
+/* 
+ * 设置页面主体的字体样式，移除默认外边距和内边距，并设置浅灰色背景色。
+ */
+ body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+/* 
+ * 设置页眉部分的样式，包括深色背景、白色文字、上下内边距以及居中对齐。
+ */
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 0;
+    text-align: center;
+}
+
+/* 
+ * 设置文章元信息的样式，清除浮动，使用灰色文字和16px字体大小。
+ */
+.entry-meta {
+    clear: both;
+    color: #999;
+    font-size: 16px;
+}
+
+/* 
+ * 设置导航栏的样式，包括深灰色背景和隐藏溢出内容。
+ */
+nav {
+    background-color: #444;
+    overflow: hidden;
+}
+
+/* 
+ * 设置导航栏无序列表的样式，移除默认列表样式、外边距和内边距。
+ */
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+/* 
+ * 设置导航栏列表项的样式，使其水平排列。
+ */
+nav ul li {
+    float: left;
+}
+
+/* 
+ * 设置导航栏链接和下拉按钮的样式，包括内联块显示、白色文字、居中对齐、填充和去除下划线。
+ */
+nav ul li a, .dropbtn {
+    display: inline-block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+/* 
+ * 设置导航栏链接和下拉按钮的悬停效果，改变背景颜色。
+ */
+nav ul li a:hover, .dropdown:hover .dropbtn {
+    background-color: #555;
+}
+
+/* 
+ * 设置下拉菜单容器的样式，包括隐藏内容、绝对定位、最小宽度、阴影效果和堆叠顺序。
+ */
+.dropdown {
+    float: left;
+    overflow: hidden;
+}
+
+/* 
+ * 设置下拉菜单内容的样式，初始为隐藏状态，背景为浅灰色，带阴影效果。
+ */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 2;
+}
+
+/* 
+ * 设置下拉菜单链接的样式，包括黑色文字、填充、去除下划线和左对齐。
+ */
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+
+/* 
+ * 设置下拉菜单链接的悬停效果，改变背景颜色。
+ */
+.dropdown-content a:hover {
+    background-color: #f1f1f1;
+}
+
+/* 
+ * 设置下拉菜单在鼠标悬停时显示内容。
+ */
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* 
+ * 设置主内容区域的样式，包括内边距、白色背景、外边距、圆角和阴影效果。
+ */
+main {
+    padding: 20px;
+    background-color: #fff;
+    margin: 20px;
+    border-radius: 5px;
+    margin-bottom: 80px;
+    text-align: center;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.content-section {
+  padding: 60px 20px;
+  text-align: center;
+  min-height: 300px;
+  position: relative;
+  z-index: 1;
+    background-repeat: no-repeat;
+    background-position: center top;
+    background-size: cover;
+}
+
+.content-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.85);
+  z-index: -1;
+}
+
+.about {
+    background-image: url('img/about.jpg');
+    font-family: 'Castellar', sans-serif;
+}
+.movies{
+    background-image: url('img/movies.jpg'); 
+    height: 1300px;
+    font-family: 'Courier New', monospace;
+}
+.hiphop{
+    background-image: url('img/hiphop.jpg');
+    height: 700px;
+    font-family: 'Arial Black', sans-serif;
+}
+.contact{
+    background-image: url('img/contact.jpg');
+}
+
+/* 
+ * 设置段落中的链接样式，去除下划线并使用黑色文字。
+ */
+section p a {
+    text-decoration: none;
+    color: #000;
+}
+
+/* 
+ * 设置段落中链接的悬停效果，改变文字颜色。
+ */
+section p a:hover {
+    color: #886969;
+}
+
+/* 
+ * 设置页脚的样式，包括深色背景、白色文字、居中对齐、固定位置和底部对齐。
+ */
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    z-index: 1;
+}
+
+
+/* 初始状态 */
+.fade-in {
+  opacity: 0;
+  transform: translateY(40px); /* 向上偏移一点 */
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+/* 进入视口后应用的类 */
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.typewriter {
+  display: block;
+  white-space: pre-wrap; /* 保留空格和换行 */
+}
+
+.typewriter span {
+  opacity: 0;
+  animation: typing 0.1s forwards;
+}
+
+@keyframes typing {
+  to {
+    opacity: 1;
+  }
+}

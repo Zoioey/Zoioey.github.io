@@ -1,0 +1,172 @@
+/* 设置body的基本样式，包括字体、背景色、外边距和内边距 */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9;
+    margin: 0;
+    padding: 0;
+}
+
+/* 定义容器样式，包括宽度、居中、背景色、内边距、阴影和圆角 */
+.container {
+    width: 80%;
+    margin: 0 auto;
+    background-color: #add8e6; /* 更改为浅蓝色背景 */
+    padding: 30px; /* 增加内边距 */
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1); /* 增加阴影 */
+    border-radius: 10px; /* 增加圆角 */
+}
+
+/* 设置header的样式，包括文本居中、下边距、背景色、字体颜色、内边距和圆角 */
+header {
+    text-align: center;
+    margin-bottom: 30px;
+    background-color: #6c757d; /* 更改为深灰色背景 */
+    color: #ffffff; /* 设置字体颜色为白色 */
+    padding: 20px; /* 增加内边距 */
+    border-radius: 10px; /* 增加圆角 */
+    position: relative; /* 添加相对定位 */
+}
+
+/* 在header前添加装饰性线条 */
+header::before {
+    content: '';
+    position: absolute;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 50%;
+    height: 2px;
+    background-color: #495057; /* 线条颜色 */
+}
+
+/* 设置header中h1的样式，包括移除默认外边距和设置字体颜色 */
+header h1 {
+    margin: 0;
+    color: #ffffff; /* 设置字体颜色为白色 */
+}
+
+/* 设置profile区域的样式，包括显示方式、对齐方式、下边距、背景色、内边距和圆角 */
+.profile {
+    display: flex;
+    align-items: center;
+    margin-bottom: 30px;
+    background-color: #f8f9fa; /* 更改为浅灰色背景 */
+    padding: 20px; /* 增加内边距 */
+    border-radius: 10px; /* 增加圆角 */
+    position: relative; /* 添加相对定位 */
+    border: 1px solid #ddd; /* 添加边框 */
+}
+
+/* 在profile区域前添加装饰性线条 */
+.profile::before {
+    content: '';
+    position: absolute;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 50%;
+    height: 2px;
+    background-color: #495057; /* 线条颜色 */
+}
+
+/* 设置profile照片的样式，包括宽度、高度、圆角、右外边距和边框 */
+.profile-photo {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    margin-right: 30px; /* 增加间距 */
+    border: 2px solid #007bff; /* 添加边框 */
+}
+
+/* 设置联系信息部分的样式，让其在profile中自动扩展 */
+.contact-info {
+    flex-grow: 1;
+}
+
+/* 设置联系信息标题的样式，包括移除上外边距和设置字体颜色 */
+.contact-info h2 {
+    margin-top: 0;
+    color: #495057; /* 设置二级标题颜色为深灰色 */
+}
+
+/* 设置section的样式，包括下边距、背景色、内边距、圆角和边框 */
+section {
+    margin-bottom: 30px;
+    background-color: #ffffff; /* 更改为白色背景 */
+    padding: 20px; /* 增加内边距 */
+    border-radius: 10px; /* 增加圆角 */
+    position: relative; /* 添加相对定位 */
+    border: 1px solid #ddd; /* 添加边框 */
+}
+
+/* 在section前添加装饰性线条 */
+section::before {
+    content: '';
+    position: absolute;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 50%;
+    height: 2px;
+    background-color: #495057; /* 线条颜色 */
+}
+
+/* 设置section中h2的样式，包括设置字体颜色 */
+section h2 {
+    color: #495057; /* 设置二级标题颜色为深灰色 */
+}
+
+/* 设置无序列表的样式，包括移除列表符号和内边距 */
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+/* 设置列表项的样式，包括下边距和字体颜色 */
+ul li {
+    margin-bottom: 10px; /* 增加间距 */
+    color: #212529; /* 设置列表项颜色为深黑色 */
+}
+
+/* 以下为额外添加的样式，用于增强页面的视觉效果 */
+
+/* 添加彩色背景和字体颜色 */
+header {
+    background-color: #6c757d; /* 更改为深灰色背景 */
+    color: #fff; /* 设置字体颜色为白色 */
+}
+
+.profile {
+    background-color: #e9ecef; /* 设置背景颜色为浅灰色 */
+}
+
+.contact-info h2, section h2 {
+    color: #495057; /* 设置字体颜色为深灰色 */
+}
+
+ul li {
+    color: #212529; /* 设置列表项颜色为深黑色 */
+}
+
+/* 添加更多装饰性线条 */
+.profile::after {
+    content: '';
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 50%;
+    height: 2px;
+    background-color: #495057; /* 线条颜色 */
+}
+
+section::after {
+    content: '';
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 50%;
+    height: 2px;
+    background-color: #495057; /* 线条颜色 */
+}

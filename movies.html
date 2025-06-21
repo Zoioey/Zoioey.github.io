@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>影视剧分享站</title>
+  <link rel="icon" href="img/mv.jpg" type="image/x-icon">
+  <link rel="stylesheet" href="movies.css">
+</head>
+<body>
+  <header>
+    <h1>🎬 看过的</h1>
+    <input type="text" id="searchInput" placeholder="搜索电影/电视剧...">
+  </header>
+    <nav>
+        <ul>
+            <!-- 导航项：主页 -->
+            <li><a href="blog.html">Home</a></li>
+            <!-- 下拉菜单项 -->
+            <li class="dropdown">
+                <!-- 下拉菜单的触发按钮 -->
+                <a href="#" class="dropbtn">Menu</a>
+                <!-- 下拉菜单的内容 -->
+                <div class="dropdown-content">
+                    <a href="about.html">Code</a>
+                    <!-- 影视剧分享页面的链接 -->
+                    <a href="movies.html">Movies</a>
+                    <!-- 街舞页面的链接 -->
+                    <a href="dance.html">Hiphop</a>
+                    <!-- 联系页面的链接 -->
+                    <a href="contact.html">Contact</a>
+                </div>
+            </li>
+        </ul>
+    </nav>
+
+  <main>
+    <section id="movieList" class="movie-grid"></section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 电影分享站 </p>
+  </footer>
+
+  <script src="js/mvmain.js"></script>
+</body>
+</html>
