@@ -2,3 +2,4 @@ videos/dance_video.mp4 filter=lfs diff=lfs merge=lfs -text
 视频讲解.mp4 filter=lfs diff=lfs merge=lfs -text
 视频讲解.mp4videos/*.mp4 filter=lfs diff=lfs merge=lfs -text
 showtime.mp4 filter=lfs diff=lfs merge=lfs -text
+showtime.mp4videos/dance_video.mp4 filter=lfs diff=lfs merge=lfs -text
