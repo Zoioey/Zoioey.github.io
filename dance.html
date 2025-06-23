@@ -5,7 +5,7 @@
     <title>嘻哈文化</title>
     <!-- 引入与 blog.html 相同的样式 -->
     <link rel="icon" href="img/hh.jpg" type="image/x-icon">
-    <link rel="stylesheet" href="hiphop.css"> <!-- 假设 blog.css 是 blog.html 的样式文件 -->
+    <link rel="stylesheet" href="hiphop.css"> 
 </head>
 <body>
     <header>
@@ -33,22 +33,38 @@
         <h1>街舞</h1>
         <p>街舞（Breakdance）是另一种深受年轻人喜爱的嘻哈文化表现形式，强调身体的律动和技巧。</p>
         <!-- 插入街舞相关视频 -->
-        <video controls width="640" height="360">
-            <source src="videos/dance_video.mp4" type="video/mp4">
-            您的浏览器不支持视频播放。
-        </video>
+
+        <div class="video-wrapper">
+            <iframe src="https://player.bilibili.com/player.html?bvid=BV1vv41167sR"
+                scrolling="no"
+                frameborder="0"
+                allowfullscreen="true">
+            </iframe>
+        </div>
+
+        
     </section>
     
+    
+    <!-- 说唱板块 -->
+    <section id="rap">
+        <h1>说唱</h1>
+        <p>说唱（Rap）是嘻哈文化的重要组成部分，它通过有节奏的语言表达个人的观点、故事或情感。下面视频是小河淌水的MV。</p>
+        <!-- 插入说唱相关视频 -->
+        <!-- <video controls width="640" height="360">
+            <source src="videos/法老,龚琳娜 - 小河淌水1952.mp4" type="video/mp4">
+            您的浏览器不支持视频播放。
+        </video> -->
+        <div class="video-wrapper">
+            <iframe src="https://player.bilibili.com/player.html?isOutside=true&aid=258987813&bvid=BV1Ga411S76M&cid=787998224&p=1" 
+                scrolling="no" 
+                border="0" 
+                frameborder="no" 
+                framespacing="0" 
+                allowfullscreen="true">
+            </iframe>
+        </div>
 
-<!-- 说唱板块 -->
-<section id="rap">
-    <h1>说唱</h1>
-    <p>说唱（Rap）是嘻哈文化的重要组成部分，它通过有节奏的语言表达个人的观点、故事或情感。下面视频是小河淌水的MV。</p>
-    <!-- 插入说唱相关视频 -->
-    <video controls width="640" height="360">
-        <source src="videos/法老,龚琳娜 - 小河淌水1952.mp4" type="video/mp4">
-        您的浏览器不支持视频播放。
-    </video>
 </section>
 
 
